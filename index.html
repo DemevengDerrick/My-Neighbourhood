@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--meta infos-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebMap</title>
+    
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.css"/>
+
+    <!--JS scripts-->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin="">
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <h1>My Neighbourhood</h1>
+    <!-- Add the information window content here -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Welcome to my Neighbourhood website!</h2>
+        <h4>This application helps you :</h4>
+        <p>1 - Click on a location to find the reachability area based on a travel-time/distance and travel mode</p>
+        <p>2 - Find the facilities withing the reachability area with the associated bar chart of the distribution of the facilities</p>
+        <h4>How it works :</h4>
+        <p>In the reachability tab, select between travel-time (tme) and travel distance (dst) in the first row.
+            In the second raw secect the travel mode (car, cycle, walk, wheelchair). Activate the draw (drw) button
+            and click on a location on the map to get the reachability area. After the reachability area is computed, click on 
+            the <strong>facilities within reach</strong> button to get the Facailitiies.
+        </p>
+        </div>
+    </div>
+    <!--div id="Stats">
+        <div id="menu">
+            <ul>
+              <li><img src="images/hospital.jpeg" alt="" height="60px" width="60px">0</li>
+              <li><img src="images/school.jpeg" alt="" height="60px" width="60px">0</li>
+              <li><img src="images/police.jpeg" alt="" height="60px" width="60px">0</li>
+              <li><img src="images/firefighter.jpeg" alt="" height="60px" width="60px">0</li>
+              <li><img src="images/supermarket.jpeg" alt="" height="60px" width="60px">0</li>
+              <li><img src="images/store.jpeg" alt="" height="60px" width="60px">0</li>
+            </ul>
+        </div>
+    </div-->
+    <div id="map">
+        <div class="leaflet-bottom leaflet-left">
+            <!--input type="button" id="reach" value="Facilitiies within reach" class="btnStyle span3"-->
+            <!--input type="button" id="delReach" value="Clear Facailitiies" class="btnStyle span3"-->
+        </div>
+    </div>
+    <div id="custom_buttons">
+        <button id="reach"><strong>Facilitiies within reach</strong></button>
+        <button id="delReach"><strong>Clear Facailitiies</strong></button>
+    </div>
+    <div id="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="footer">
+        <p><strong>Developed by Derrick Demeveng</strong></p>
+    </div>
+
+    <!--script src="data/pois_yaounde.geojson"></script-->
+    <script src="javaScript.js">
+    </script>
+</body>
+</html>
