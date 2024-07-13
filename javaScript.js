@@ -16,7 +16,7 @@ var pois_yaounde = new L.geoJson();
 
 $.ajax({
 dataType: "json",
-url: "https://personal.psu.edu/dcd5396/mcda/data/pois_yaounde2.json",
+url: "https://github.com/DemevengDerrick/My-Neighbourhood/blob/main/data/pois_yaounde2.json",
 success: function(data) {
     $(data.features).each(function(key, data) {
         //console.log(data.properties.fclass)
